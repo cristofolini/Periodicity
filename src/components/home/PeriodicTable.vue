@@ -22,7 +22,7 @@
 		</div>
 		<div class="spacer3"></div>
 		<div v-for="element in elements" :key="element.atomicNumber" v-if="isMain(element)" class="elementWrapper" @mouseenter="currentElement(element)" @mouseleave="clearCurrentForTrend()" @click.right="beginSumming(element)" oncontextmenu="return false;" style="z-index: 2">
-			<router-link :to="{ path: '/element/' + element.atomicNumber}" class="routerWrap">
+			<router-link :to="{ name: 'element', params: {lang: $i18n.locale, id:element.atomicNumber} }" class="routerWrap">
 				<ElementCard v-if="mode === 'table' || mode === 'addition'" :element="element" :key="element.atomicNumber" :class="createElementClass(element)" />
 				<TrendCard :trendToDisplay="trend" v-else-if="mode === 'trends'" :element="element" :key="element.atomicNumber" :class="createElementClass(element)" />
 			</router-link>
@@ -32,7 +32,7 @@
 		<div class="spacer6"></div>
 		<div class="spacer7"></div>
 		<div v-for="element in elements" :key="element.atomicNumber" v-if="isBlockF(element)" class="elementWrapper" @mouseenter="currentElement(element)" @mouseleave="clearCurrentForTrend()" @click.right="beginSumming(element)" oncontextmenu="return false;" style="z-index: 2">
-			<router-link :to="{ path: '/element/' + element.atomicNumber}" class="routerWrap">
+			<router-link :to="{ name: 'element', params: {lang: $i18n.locale, id:element.atomicNumber} }" class="routerWrap">
 				<ElementCard v-if="mode === 'table' || mode === 'addition'" :element="element" :key="element.atomicNumber" :class="createElementClass(element)" />
 				<TrendCard :trendToDisplay="trend" v-else-if="mode === 'trends'" :element="element" :key="element.atomicNumber" :class="createElementClass(element)" />
 			</router-link>
