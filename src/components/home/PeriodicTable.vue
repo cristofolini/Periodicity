@@ -6,10 +6,10 @@
 			<div v-if="!current & mode === 'table'" class="introduction" :style="loadHandler">
 				<div class="features">
 					<div class="tips">
-						<h1>Welcome To Periodicity</h1>
+						<h1>{{$t('welcome_message')}}</h1>
 						<div v-for="point in points" :key="point.description" :class="point.class+' point'">
 							<v-icon :style="{color: point.color}">{{point.icon}}</v-icon>
-							<p>{{point.description}}</p>
+							<p>{{$t(point.description)}}</p>
 						</div>
 					</div>
 					<div id="bohr-intro-container" :style="introBohr"></div>
@@ -70,21 +70,19 @@ export default {
 				{
 					class: 'point1',
 					icon: 'open_in_new',
-					description: 'Hover an element to view general information, or click to see its detailed page',
+					description: 'point1_description',
 					color: 'lightblue',
 				},
 				{
 					class: 'point2',
 					icon: 'poll',
-					description:
-						'Graph and visualize periodic trends through the periodic trend mode in the menu or header',
+					description: 'point2_description',
 					color: 'lightsteelblue',
 				},
 				{
 					class: 'point4',
 					icon: 'library_add',
-					description:
-						'Easily find the masses of compounds by right clicking the elements of which they comprise',
+					description: 'point3_description',
 					color: 'slategrey',
 				},
 			],
