@@ -13,8 +13,12 @@ const routes = [{
     beforeEnter (to, from, next) {
       const lang = to.params.lang
       if(!['en', 'pb'].includes(lang)) return next('en')
-      if(i18n.locale !== lang) i18n.locale = lang
-      return next()
+      if(i18n.locale === lang) return next()
+      import(`../lang/${lang}.json`).then((msgs) => {
+        i18n.setLocaleMessage(lang, msgs.default || msgs)
+        i18n.locale = lang
+        return next()
+      })
     },
   },
   {
