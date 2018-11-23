@@ -3,7 +3,7 @@
 		<v-container fluid grid-list-md style="padding: 0; height: 100%">
 			<v-layout row wrap class="layout">
 				<v-flex xs12>
-					<p class="name">{{element.name}}<br/>
+					<p class="name">{{$t(element.name)}}<br/>
 						<span :style="'color:'+classify(element)[2]">{{classify(element)[0]}}</span>
 					</p>
 				</v-flex>

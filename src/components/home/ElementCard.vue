@@ -4,7 +4,7 @@
 			<span>{{element.atomicMass}}</span>
 		</div>
 		<div class="symbol">{{element.symbol}}</div>
-		<div class="name">{{element.name}}</div>
+		<div class="name">{{$t(element.name)}}</div>
 	</div>
 </template>
 

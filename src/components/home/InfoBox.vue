@@ -1,7 +1,7 @@
 <template>
 	<div class="box">
 		<div class="header">
-			<span class="name" :class="classify(element)[1]">{{element.atomicNumber + ' - ' + element.name}}</span><br/>
+			<span class="name" :class="classify(element)[1]">{{element.atomicNumber + ' - ' + $t(element.name)}}</span><br/>
 			<span class="classification" :class="classify(element)[1]">{{classify(element)[0]}}</span>
 		</div>
 		<div class="info">
