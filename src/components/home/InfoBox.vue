@@ -2,20 +2,20 @@
 	<div class="box">
 		<div class="header">
 			<span class="name" :class="classify(element)[1]">{{element.atomicNumber + ' - ' + $t(element.name)}}</span><br/>
-			<span class="classification" :class="classify(element)[1]">{{classify(element)[0]}}</span>
+			<span class="classification" :class="classify(element)[1]">{{$t(classify(element)[0])}}</span>
 		</div>
 		<div class="info">
 			<div class="state">
-				<p>Phase</p>
+				<p>{{$t('phase')}}</p>
 				<img v-bind:src="getImg(element.standardState)" v-bind:alt="pic" />
 			</div>
 			<div class="display">
-				<p class="label">Atomic Mass</p>
+				<p class="label">{{$t('atomic_mass')}}</p>
 				<p class="value">{{$n(element.atomicMass, 'decimal', $i18n.locale)}}</p>
 			</div>
 			<div class="display">
 				<v-tooltip top>
-					<p slot="activator" class="label" color="primary">Density</p>
+					<p slot="activator" class="label" color="primary">{{$t('density')}}</p>
 					<span>in g/mL</span>
 				</v-tooltip>
 				<p class="value">{{$n(element.density, 'decimal', $i18n.locale) || 'unknown'}}</p>
