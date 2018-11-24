@@ -4,34 +4,33 @@
 			<v-layout row wrap class="layout">
 				<v-flex xs12>
 					<p class="name">{{$t(element.name)}}<br/>
-						<span :style="'color:'+classify(element)[2]">{{classify(element)[0]}}</span>
+						<span :style="'color:'+classify(element)[2]">{{$t(classify(element)[0])}}</span>
 					</p>
 				</v-flex>
 				<v-flex md4 sm12 xs12>
 					<div class="card" id="bohr">
-						<p>Atom</p>
+						<p>{{$t('atom')}}</p>
 						<div id="bohr-model-container"></div>
 						<div style="clear: both"></div>
 						<div class="properties">
 							<div class="property" style="float:left">
-								<span>{{element.atomicNumber}}</span><br/>Atomic Number
+								<span>{{element.atomicNumber}}</span><br/>{{$t('atomic_number')}}
 							</div>
 							<div class="property" style="float:right">
-								<span>{{$n(element.atomicMass, 'decimal', $i18n.locale)}}</span><br/>Atomic Mass
+								<span>{{$n(element.atomicMass, 'decimal', $i18n.locale)}}</span><br/>{{$t('atomic_mass')}}
 							</div>
 							<div class="property" style="float:left">
-								<span v-html="convertEC(element)"></span><br/>e
-								<sup>-</sup> Configuration
+								<span v-html="convertEC(element)"></span><br/>{{$t('e_configuration')}}
 							</div>
 							<div class="property" style="float:right">
-								<span>{{$n(element.atomicRadius, 'decimal', $i18n.locale) || 'unknown'}}</span><br/>Atomic Radius
+								<span>{{$n(element.atomicRadius, 'decimal', $i18n.locale) || $t('unknown')}}</span><br/>{{$t('atomic_radius')}}
 							</div>
 						</div>
 					</div>
 				</v-flex>
 				<v-flex md8 sm12 xs12>
 					<div class="card" id="graph">
-						<p>Trends</p>
+						<p>{{$t('trends')}}</p>
 						<div class="trendWrap">
 							<TrendBox height="21vw" :active="element.atomicNumber" id="graph1" />
 						</div>
@@ -40,17 +39,17 @@
 				<v-flex md12>
 					<div class="card" style="height: 26.5vw" id="info">
 						<v-tabs v-model="active" color="accent" fixed-tabs slider-color="white">
-							<v-tab :key='1'>General</v-tab>
-							<v-tab :key='2'>Properties</v-tab>
+							<v-tab :key='1'>{{$t('general')}}</v-tab>
+							<v-tab :key='2'>{{$t('properties')}}</v-tab>
 							<v-tab-item :key='1'>
 								<div class="content">
 									<p class="description">{{description}}</p>
 									<div class="generalProperties">
-										<p>Appearance:
-											<span>{{dataJSON[element.atomicNumber - 1].appearance || 'unknown'}}</span>
+										<p>{{$t('appearance')}}:
+											<span>{{dataJSON[element.atomicNumber - 1].appearance || $t('unknown')}}</span>
 										</p>
-										<p>Discovery:
-											<span>{{element.yearDiscovered || 'unknown'}}, by {{dataJSON[element.atomicNumber - 1].discovered_by}}</span>
+										<p>{{$t('discovery')}}:
+											<span>{{element.yearDiscovered || $t('unknown')}}, {{$t('by')}} {{dataJSON[element.atomicNumber - 1].discovered_by}}</span>
 										</p>
 									</div>
 								</div>
@@ -58,42 +57,42 @@
 							<v-tab-item :key='2'>
 								<div class="aboutList">
 									<p>
-										<span>{{element.standardState || 'unknown'}}</span> <br/> Phase at STP
+										<span>{{$t(element.standardState) || $t('unknown')}}</span> <br/> {{$t('phase_stp')}}
 									</p>
 									<p>
-										<span>{{$n(element.density, 'decimal', $i18n.locale) || 'unknown'}}</span><br/> Density at STP
+										<span>{{$n(element.density, 'decimal', $i18n.locale) || $t('unknown')}}</span><br/> {{$t('density_stp')}}
 									</p>
 									<p>
-										<span>{{$n(element.meltingPoint, 'decimal', $i18n.locale) || 'unknown'}}</span>
-										<span v-if="element.meltingPoint">K</span><br/> Melting Point
+										<span>{{$n(element.meltingPoint, 'decimal', $i18n.locale) || $t('unknown')}}</span>
+										<span v-if="element.meltingPoint">K</span><br/> {{$t('melting_point')}}
 									</p>
 									<p>
-										<span>{{$n(element.boilingPoint, 'decimal', $i18n.locale) || 'unknown'}}</span>
-										<span v-if="element.boilingPoint">K</span><br/> Boiling Point
+										<span>{{$n(element.boilingPoint, 'decimal', $i18n.locale) || $t('unknown')}}</span>
+										<span v-if="element.boilingPoint">K</span><br/> {{$t('boiling_point')}}
 									</p>
 									<p>
-										<span>{{$n(dataJSON[element.atomicNumber - 1].molar_heat, 'decimal', $i18n.locale) || 'unknown'}}</span>
-										<span v-if="dataJSON[element.atomicNumber - 1].molar_heat">J/molK</span><br/> Molar Heat
+										<span>{{$n(dataJSON[element.atomicNumber - 1].molar_heat, 'decimal', $i18n.locale) || $t('unknown')}}</span>
+										<span v-if="dataJSON[element.atomicNumber - 1].molar_heat">J/molK</span><br/> {{$t('molar_heat')}}
 									</p>
 									<p>
-										<span>{{element.bondingType || 'unknown'}}</span><br/> Bonding Type
+										<span>{{$t(element.bondingType) || $t('unknown')}}</span><br/> {{$t('bonding_type')}}
 									</p>
 									<p>
-										<span>{{$n(element.electronegativity, 'decimal', $i18n.locale) || 'unknown'}}</span>
-										<span v-if="element.electronegativity">χr</span><br/> Electronegativity
+										<span>{{$n(element.electronegativity, 'decimal', $i18n.locale) || $t('unknown')}}</span>
+										<span v-if="element.electronegativity">χr</span><br/> {{$t('electronegativity')}}
 									</p>
 									<p>
-										<span>{{$n(element.electronAffinity, 'decimal', $i18n.locale) || 'unknown'}}</span>
-										<span v-if="element.electronAffinity">kJ/mol</span> <br/> Electron Affinity
+										<span>{{$n(element.electronAffinity, 'decimal', $i18n.locale) || $t('unknown')}}</span>
+										<span v-if="element.electronAffinity">kJ/mol</span> <br/> {{$t('electron_affinity')}}
 									</p>
 									<p>
-										<span>{{$n(element.ionizationEnergy, 'decimal', $i18n.locale) || 'unknown'}}</span>
-										<span v-if="element.ionizationEnergy">kJ/mol</span><br/> Ionization Energy
+										<span>{{$n(element.ionizationEnergy, 'decimal', $i18n.locale) || $t('unknown')}}</span>
+										<span v-if="element.ionizationEnergy">kJ/mol</span><br/> {{$t('ionization_energy')}}
 									</p>
 									<p>
-										<span>{{$n(element.vanDelWaalsRadius, 'decimal', $i18n.locale) || 'unknown'}}
+										<span>{{$n(element.vanDelWaalsRadius, 'decimal', $i18n.locale) || $t('unknown')}}
 											<span v-if="element.vanDelWaalsRadius">pm</span>
-										</span><br/> Van Del Waals Radius
+										</span><br/> {{$t('van_radius')}}
 									</p>
 								</div>
 							</v-tab-item>
