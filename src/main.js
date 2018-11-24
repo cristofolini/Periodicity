@@ -18,10 +18,23 @@ Vue.use(Vuetify, {
 })
 
 Vue.use(VueI18n)
+const numberFormats = {
+  'en': {
+    decimal: {
+      style: 'decimal', locales: 'en'
+    }
+  },
+  'pt-BR': {
+    decimal: {
+      style: 'decimal', locales: 'pt-BR'
+    }
+  }
+}
 export const i18n = new VueI18n({
   locale: 'en',
   fallbackLocale: 'en',
-  messages: { en }
+  messages: { en },
+  numberFormats
 })
 
 Vue.config.productionTip = false
