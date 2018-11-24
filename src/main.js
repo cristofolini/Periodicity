@@ -44,6 +44,9 @@ new Vue({
   components: {
     App
   },
+  data: {
+    project_repo: 'https://github.com/kadinzhang/Periodic-Table'
+  },
   i18n,
   router,
   template: '<App/>'

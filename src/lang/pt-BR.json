@@ -3,6 +3,8 @@
   "point1_description": "Passe o mouse sobre um elemento para ver informações gerais ou clique para ver mais detalhes",
   "point2_description": "Visualize tendências periódicas utilizando o modo Tendências Periódicas do menu",
   "point3_description": "Encontre facilmente as massas de compostos clicando com o botão direito nos elementos que os compõem",
+  "footer_note": "Periodicidade, a tendência dos elementos de formar tendências que se repetem ao longo de intervalos, é um dos mais belos conceitos da química. Esta aplicação {0} com licença MIT, gera gráficos e anima dados periódicos com o objetivo de facilitar a compreensão do conceito de periodicidade.",
+  "open_source": "de código aberto",
   "Hydrogen": "Hidrogênio",
   "Helium": "Hélio",
   "Lithium": "Lítio",

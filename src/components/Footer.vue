@@ -2,8 +2,9 @@
 	<v-footer height="auto" :style="'width: '+ width">
 		<v-layout justify-center row wrap>
 			<v-card-text class="pt-0 about">
-				Periodicity, the tendency of elements to form trends that repeat over intervals, is one of the most beautiful concepts in chemistry. This MIT licensed,
-				<a href="https://github.com/kadinzhang/Periodic-Table">open source</a> application graphs and animates periodic data with the aim of making the concept of periodicity easier to grasp.
+        <i18n path="footer_note" tag="label" for="tos">
+          <a :href="project_repo" target="_blank">{{$t('open_source')}}</a>
+        </i18n>
 			</v-card-text>
 			<v-flex primary lighten-2 py-3 text-xs-center xs12 class="copy">
 				&copy;2018 -
