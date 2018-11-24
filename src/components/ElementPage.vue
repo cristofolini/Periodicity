@@ -49,7 +49,7 @@
 											<span>{{dataJSON[element.atomicNumber - 1].appearance || $t('unknown')}}</span>
 										</p>
 										<p>{{$t('discovery')}}:
-											<span>{{element.yearDiscovered || $t('unknown')}}, {{$t('by')}} {{dataJSON[element.atomicNumber - 1].discovered_by}}</span>
+											<span>{{$d(new Date(element.yearDiscovered, 1), 'short', $i18n.locale) || $t('unknown')}}, {{$t('by')}} {{dataJSON[element.atomicNumber - 1].discovered_by}}</span>
 										</p>
 									</div>
 								</div>

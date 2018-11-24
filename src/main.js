@@ -30,11 +30,32 @@ const numberFormats = {
     }
   }
 }
+const dateTimeFormats = {
+  'en': {
+    short: {
+      year: '2-digit'
+    },
+    long: {
+      year: 'numeric', month: 'short', day: 'numeric',
+      weekday: 'short'
+    }
+  },
+  'pt-BR': {
+    short: {
+      year: 'numeric'
+    },
+    long: {
+      year: 'numeric', month: 'short', day: 'numeric',
+      weekday: 'short'
+    }
+  }
+}
 export const i18n = new VueI18n({
   locale: 'en',
   fallbackLocale: 'en',
   messages: { en },
-  numberFormats
+  numberFormats,
+  dateTimeFormats
 })
 
 Vue.config.productionTip = false
