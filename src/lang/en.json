@@ -164,5 +164,6 @@
   "metallic": "metallic",
   "gas": "gas",
   "atomic": "atomic",
-  "liquid": "liquid"
+  "liquid": "liquid",
+  "periodic_trend": "Periodic Trend"
 }
