@@ -12,7 +12,7 @@ const routes = [{
     component: Home,
     beforeEnter (to, from, next) {
       const lang = to.params.lang
-      if(!['en', 'pb'].includes(lang)) return next('en')
+      if(!['en', 'pt-BR'].includes(lang)) return next('en')
       if(i18n.locale === lang) return next()
       import(`../lang/${lang}.json`).then((msgs) => {
         i18n.setLocaleMessage(lang, msgs.default || msgs)
