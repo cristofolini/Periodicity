@@ -11,14 +11,14 @@
 			</div>
 			<div class="display">
 				<p class="label">Atomic Mass</p>
-				<p class="value">{{element.atomicMass}}</p>
+				<p class="value">{{$n(element.atomicMass, 'decimal', $i18n.locale)}}</p>
 			</div>
 			<div class="display">
 				<v-tooltip top>
 					<p slot="activator" class="label" color="primary">Density</p>
 					<span>in g/mL</span>
 				</v-tooltip>
-				<p class="value">{{element.density || 'unknown'}}</p>
+				<p class="value">{{$n(element.density, 'decimal', $i18n.locale) || 'unknown'}}</p>
 			</div>
 			<div id="bohr-model-container">
 			</div>

@@ -17,14 +17,14 @@
 								<span>{{element.atomicNumber}}</span><br/>Atomic Number
 							</div>
 							<div class="property" style="float:right">
-								<span>{{element.atomicMass}}</span><br/>Atomic Mass
+								<span>{{$n(element.atomicMass, 'decimal', $i18n.locale)}}</span><br/>Atomic Mass
 							</div>
 							<div class="property" style="float:left">
 								<span v-html="convertEC(element)"></span><br/>e
 								<sup>-</sup> Configuration
 							</div>
 							<div class="property" style="float:right">
-								<span>{{element.atomicRadius || 'unknown'}}</span><br/>Atomic Radius
+								<span>{{$n(element.atomicRadius, 'decimal', $i18n.locale) || 'unknown'}}</span><br/>Atomic Radius
 							</div>
 						</div>
 					</div>
@@ -61,37 +61,37 @@
 										<span>{{element.standardState || 'unknown'}}</span> <br/> Phase at STP
 									</p>
 									<p>
-										<span>{{element.density || 'unknown'}}</span><br/> Density at STP
+										<span>{{$n(element.density, 'decimal', $i18n.locale) || 'unknown'}}</span><br/> Density at STP
 									</p>
 									<p>
-										<span>{{element.meltingPoint || 'unknown'}}</span>
-										<span v-if="element.boilingPoint">K</span><br/> Melting Point
+										<span>{{$n(element.meltingPoint, 'decimal', $i18n.locale) || 'unknown'}}</span>
+										<span v-if="element.meltingPoint">K</span><br/> Melting Point
 									</p>
 									<p>
-										<span>{{element.boilingPoint || 'unknown'}}</span>
+										<span>{{$n(element.boilingPoint, 'decimal', $i18n.locale) || 'unknown'}}</span>
 										<span v-if="element.boilingPoint">K</span><br/> Boiling Point
 									</p>
 									<p>
-										<span>{{dataJSON[element.atomicNumber - 1].molar_heat || 'unknown'}}</span>
+										<span>{{$n(dataJSON[element.atomicNumber - 1].molar_heat, 'decimal', $i18n.locale) || 'unknown'}}</span>
 										<span v-if="dataJSON[element.atomicNumber - 1].molar_heat">J/molK</span><br/> Molar Heat
 									</p>
 									<p>
 										<span>{{element.bondingType || 'unknown'}}</span><br/> Bonding Type
 									</p>
 									<p>
-										<span>{{element.electronegativity || 'unknown'}}</span>
+										<span>{{$n(element.electronegativity, 'decimal', $i18n.locale) || 'unknown'}}</span>
 										<span v-if="element.electronegativity">χr</span><br/> Electronegativity
 									</p>
 									<p>
-										<span>{{element.electronAffinity|| 'unknown'}}</span>
+										<span>{{$n(element.electronAffinity, 'decimal', $i18n.locale) || 'unknown'}}</span>
 										<span v-if="element.electronAffinity">kJ/mol</span> <br/> Electron Affinity
 									</p>
 									<p>
-										<span>{{element.ionizationEnergy || 'unknown'}}</span>
+										<span>{{$n(element.ionizationEnergy, 'decimal', $i18n.locale) || 'unknown'}}</span>
 										<span v-if="element.ionizationEnergy">kJ/mol</span><br/> Ionization Energy
 									</p>
 									<p>
-										<span>{{element.vanDelWaalsRadius || 'unknown'}}
+										<span>{{$n(element.vanDelWaalsRadius, 'decimal', $i18n.locale) || 'unknown'}}
 											<span v-if="element.vanDelWaalsRadius">pm</span>
 										</span><br/> Van Del Waals Radius
 									</p>

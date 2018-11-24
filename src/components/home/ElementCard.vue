@@ -1,7 +1,7 @@
 <template>
 	<div class="element" :style="preloadStyles">
 		<div class="atomicnumber">{{element.atomicNumber}}
-			<span>{{element.atomicMass}}</span>
+			<span>{{$n(element.atomicMass, 'decimal', $i18n.locale)}}</span>
 		</div>
 		<div class="symbol">{{element.symbol}}</div>
 		<div class="name">{{$t(element.name)}}</div>
