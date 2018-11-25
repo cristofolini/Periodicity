@@ -24,7 +24,17 @@ const routes = [{
   {
     name: 'element',
     path: '/:lang/element/:id',
-    component: ElementPage
+    component: ElementPage,
+    beforeEnter (to, from, next) {
+      const lang = to.params.lang
+      if(!['en', 'pt-BR'].includes(lang)) return next('en')
+      if(i18n.locale === lang) return next()
+      import(`../lang/${lang}.json`).then((msgs) => {
+        i18n.setLocaleMessage(lang, msgs.default || msgs)
+        i18n.locale = lang
+        return next()
+      })
+    },
   },
   {
     name: 'hi',
@@ -32,7 +42,7 @@ const routes = [{
     component: ElementPage
   },
   {
-    path: '*',
+    path: '/',
     redirect: '/en'
   }
 ]
