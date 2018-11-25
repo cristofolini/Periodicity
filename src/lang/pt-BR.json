@@ -165,5 +165,9 @@
   "gas": "gasoso",
   "atomic": "atômica",
   "liquid": "líquido",
-  "periodic_trend": "Propriedade Periódica"
+  "periodic_trend": "Propriedade Periódica",
+  "in": "em",
+  "diatomic": "diatômica",
+  "Ancient": "Antiguidade",
+  "unknown, before 5000 BC": "desconhecido, antes de 5000 A.C."
 }

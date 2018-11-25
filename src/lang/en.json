@@ -165,5 +165,9 @@
   "gas": "gas",
   "atomic": "atomic",
   "liquid": "liquid",
-  "periodic_trend": "Periodic Trend"
+  "periodic_trend": "Periodic Trend",
+  "in": "in",
+  "diatomic": "diatomic",
+  "Ancient": "Ancient",
+  "unknown, before 5000 BC": "unknown, before 5000 BC"
 }
